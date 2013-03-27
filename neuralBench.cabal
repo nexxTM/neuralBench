@@ -1,0 +1,29 @@
+name:           neuralBench
+version:        0.1
+cabal-version:  >=1.2
+build-type:     Simple
+author:         Marius Loewe
+
+executable neuralBench
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  build-depends:   
+                   base >= 4,
+                   csv,
+                   hmatrix,
+                   hnn >= 0.2,
+                   vector,
+                   hfann,
+                   temporary,
+                   random,
+                   Neural,
+                   fgl,
+                   criterion,
+                   ad
+  ghc-options:     -O2 -Wall
+  other-modules:   
+                   NNRun,
+                   NNBench.Common,
+                   NNBench.HNN,
+                   NNBench.HFANN,
+                   NNBench.Neural

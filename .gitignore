@@ -1,0 +1,6 @@
+﻿
+lib/
+.settings/
+.dist-buildwrapper/
+text/
+reports/
