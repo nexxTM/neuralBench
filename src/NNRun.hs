@@ -54,6 +54,12 @@ main = do
         wineConf  = benchConf' "Wine" [15,15] 0.4 Sigmoid [1,100,1000,3000] wineTrnD
         wineSConf = benchConf' "Wine_short" [15,15] 0.4 Sigmoid [1,100,1000,10000] wineSTrnD
         confs     = [xorConf, spamConf, spamSConf, wineConf, wineSConf]
+        xorConfT   = benchConf  "XOR" [2] 0.7 Tanh [1] xorTrnD xorTrnD
+        spamConfT  = benchConf' "Spam" [70] 0.5 Sigmoid [1] spamTrnD
+        spamSConfT = benchConf' "Spam_short" [70] 0.5 Sigmoid [1] spamSTrnD
+        wineConfT  = benchConf' "Wine" [15,15] 0.4 Sigmoid [1] wineTrnD
+        wineSConfT = benchConf' "Wine_short" [15,15] 0.4 Sigmoid [1] wineSTrnD
+        confsT     = [xorConfT, spamConfT, spamSConfT, wineConfT, wineSConfT]
     {- let xorConf   = benchConf  "XOR" [2] 0.7 Tanh [1,100,1000] xorTrnD xorTrnD
         spamConf  = benchConf' "Spam" [70] 0.5 Sigmoid [1] spamTrnD
         spamSConf = benchConf' "Spam_short" [70] 0.5 Sigmoid [1,5] spamSTrnD
@@ -61,7 +67,7 @@ main = do
         wineSConf = benchConf' "Wine_short" [15,15] 0.4 Sigmoid [1,100] wineSTrnD
         confs     = [xorConf, spamConf, spamSConf, wineConf, wineSConf] -}
     mapM_ (myBench "NNReport" True benchTargets) confs
-    mapM_ (myBench "FFOnlyNNReport" False benchTargets) confs
+    mapM_ (myBench "FFOnlyNNReport" False benchTargets) confsT
     mapM_ (myBench "ADNNReport" True [(GNNet hnn, "HNN"), (GNNet hnnAD, "HNNAD")]) confs
 
 myBench :: String -> Bool -> [BenchTarget] -> BenchConf -> IO ()
