@@ -24,3 +24,8 @@ The [reports](/reports/) folder contains the criterion reports calculated on thi
 * Windows 7 Professional x64 SP1
 
 http://htmlpreview.github.com/ is usefull to view the HTML files, if you want to view them on github.
+
+## Test Data
+* Simple XOR
+* [Qulity of red wine](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)
+* [Spam clasification](https://archive.ics.uci.edu/ml/datasets/Spambase)
